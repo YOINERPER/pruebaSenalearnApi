@@ -1,6 +1,7 @@
 import express from "express"; // para poder importar modulos debes establecer: "type": "modules" en package.js
 import RoutesUsers from "./routes/users.routes.js"
 import { config } from "dotenv";
+import {PORT} from "../src/config.js"
 
 const app = express(); // creacion del servidor
 
@@ -18,6 +19,6 @@ app.use((req,res,next)=>{
     })
 })
 
-app.listen("3000"); // puerto del servidor
+app.listen(PORT); // puerto del servidor
 
-console.log("El servidor se ejecuta en el server 3000");
+console.log("El servidor se ejecuta en el server:", PORT);
